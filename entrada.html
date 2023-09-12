@@ -1,29 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulação</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Roboto:wght@700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/af4212dbbd.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            background-color: #121212;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 40px;
+            color: #8257e5;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        form div {
+            padding: 10px;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        form div label {
+            color: #d9d9d9;
+
+            font-family: 'Roboto', sans-serif;
+        }
+
+        form div input {
+            width: 150px;
+            height: 25px;
+
+            background-color: transparent;
+
+            border: none;
+            border-bottom: 2px solid #8257e5;
+            border-right: 2px solid #8257e5;
+            border-radius: 5px;
+
+            color: #d9d9d9;
+        }
+
+        form div input:hover {
+            border-top: 1px solid #8257e5;
+            border-left: 1px solid #8257e5;
+        }
+
+        form div input:focus {
+            outline: none;
+        }
+
+        form button {
+            margin: 30px;
+            padding: 10px;
+
+            background-color: #8257e5;
+            border: none;
+            border-radius: 5px;
+
+            color: #d9d9d9;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <h1>Simulação</h1>
     </header>
 
     <form action="simulacao.php" method="get">
-        <label for="cliente">Cliente</label>
-        <input type="text" name="cliente" id="cliente">
-        <label for="aporte-inicial">Aporte Inicial</label>
-        <input type="number" name="aporte-inicial" id="aporte-inicial">
-        <label for="aporte-mensal">Aporte Mensal</label>
-        <input type="number" name="aporte-mensal" id="aporte-mensal">
-        <label for="rendimento">Rendimento</label>
-        <input type="nember" name="rendimento" id="rendimento">
-        <label for="perdiodo">Período</label>
-        <input type="number" name="periodo" id="periodo">
+        <div>
+            <label for="cliente">Cliente: </label>
+            <input type="text" name="cliente" id="cliente" required>
+        </div>
+        <div>
+            <label for="aporteInicial">Aporte Inicial: </label>
+            <input type="number" name="aporteInicial" id="aporteInicial" step="0.01" required>
+        </div>
+        <div>
+            <label for="aporteMensal">Aporte Mensal: </label>
+            <input type="number" name="aporteMensal" id="aporteMensal" step="0.01" required>
+        </div>
+        <div>
+            <label for="rendimento">Rendimento: </label>
+            <input type="number" name="rendimento" id="rendimento" step="0.01" min="0.01" max="20" required>
+        </div>
+        <div>
+            <label for="periodo">Período: </label>
+            <input type="number" name="periodo" id="periodo">
+        </div>
         <button type="submit">Simular</button>
-
     </form>
-    
+
+    <nav><a href="index.html"><i class="fa-solid fa-house" style="color: #8257e5; font-size: 20px;"></i></a></nav>
 </body>
+
 </html>
